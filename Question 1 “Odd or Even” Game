@@ -1,0 +1,27 @@
+# Write your code here :-)
+from microbit import *
+import random
+
+display.scroll("EVEN-A / ODD-B")
+sleep(2000)
+
+current_number = int(random.randint(1, 100))
+div = current_number % 2
+display.show(current_number)
+
+def game_a():
+    while True:
+        if button_b.is_pressed():
+            if (div) == 1:
+                display.show(Image.HAPPY)
+            else:
+                display.scroll("NO!")
+        if button_a.is_pressed():
+            if (div) != 1:
+                display.show(Image.HAPPY)
+            else:
+                display.scroll("NO!")
+                
+        if (pin0.is_touched()):
+            display.scroll("Press Reset")
+game_a()
