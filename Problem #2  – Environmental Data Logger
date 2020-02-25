@@ -1,0 +1,14 @@
+from microbit import *  
+
+temp = temperature()  
+comp = compass.heading()
+
+while True:  
+    display.scroll(str(temp) + 'C')  
+    print(temp)
+    sleep(1000)  
+    display.scroll(comp)
+    print(comp)
+    file = open("data.csv", "w")
+    file.write("temp" "," "comp")
+    sleep(1000)
